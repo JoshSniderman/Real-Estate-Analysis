@@ -17,12 +17,9 @@
     <!-- Marker Cluster CSS -->
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
-	
 
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
-	<link rel="stylesheet" type="text/css" href="static/css/d3Style_d3.css">
-	<link rel="stylesheet" type="text/css" href="static/css/style_d3.css">
 
   </head>
   <body>
@@ -41,7 +38,7 @@
 	<div class="row">
       <div class="col-md-2">
         <div class="well">
-          <h5><strong>Zip Code:</strong></h5>
+          <h5>Zip Code:</h5>
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
         <div class="panel panel-primary">
@@ -49,30 +46,29 @@
             <h3 class="panel-title">Demographic Info</h3>
           </div>
           <div id="sample-metadata2" class="panel-body"></div>
-			<h4><strong>Sold:</strong></h4>
-			<p id = "num2"></p>
-			<p id = "area2"></p>
-			<hr>
-			<h4><strong>Current:</strong></h4>
-			<p id = "num"></p>
-			<p id = "area"></p>
-			
+			<p id = "id"></p>
+			<p id = "ethnicity"></p>
+			<p id = "gender"></p>
+			<p id = "age"></p>
+			<p id = "location"></p>
+			<p id = "bbtype"></p>
+			<p id = "wfreq"></p>
         </div>
       </div>
-	  <div class="col-md-5">
-		<h4 style="text-align:center"><strong>Avg. Price of Sold Properties</strong></h4>
-        <div id="bar2">
-		</div>
+      <div class="col-md-5">
+        <div id="bar2"></div>
       </div>
       <div class="col-md-5">
-		<h4 style="text-align:center"><strong>Avg. Price of Current Properties</strong></h4>
-        <div id="bar"></div>
+		<h4 style="text-align:center"><strong>Bar Chart</strong></h4>
+        <p style="text-align:center">Avg. properties prices</p>
+        <div id="gauge2">
+		</div>
       </div>
     </div>
 	
 	<div class="row">
       <div class="col-md-12">
-        <div class="bubblechart" id="bubble"></div>
+        <div id="bubble2"></div>
       </div>
     </div>
 	
@@ -95,19 +91,8 @@
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!-- <script src="./static/js/app_hw.js"></script> -->
-	<script src="./static/js/bar_chart.js"></script>
-	
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
-	
-	
-	<script src="./static/js/bubble_chart.js"></script>
-	<!--<script src="./static/js/bar_chart_sold_listings.js"></script>
-     <script src="./static/data/samples.json"></script> -->
+    <script src="./static/js/app_hw.js"></script>
+    <script src="./static/data/samples.json"></script>
 
   </body>
 </html>

@@ -1,0 +1,239 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.jumbotron {
+    height: 100px;
+	padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.jumbotron .h1, .jumbotron h1 {
+    font-size: 35px;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+
+#map {
+  height: 50%;
+  width: 100%;
+}
+
+#bubble {
+  width: 100%;
+}
+
+.soldsmall{
+background-color: rgba(50,205,50, 0.6);
+}
+.soldmedium{
+background-color: rgba(34,139,34, 0.6);
+}
+.soldlarge{
+background-color: rgba(0,100,0, 0.6);
+}
+
+.soldsmall div{
+background-color: rgba(50,205,50, 0.6);
+}
+.soldmedium div{
+background-color: rgba(34,139,34, 0.6);
+}
+.soldlarge div{
+background-color: rgba(0,100,0, 0.6);
+}
+
+.currentsmall{
+background-color: rgba(255,160,122, 0.6);
+}
+.currentmedium{
+background-color: rgba(205,92,92, 0.6);
+}
+.currentlarge{
+background-color: rgba(220,20,60, 0.6);
+}
+
+.currentsmall div{
+background-color: rgba(255,160,122, 0.6);
+}
+.currentmedium div{
+background-color: rgba(205,92,92, 0.6);
+}
+.currentlarge div{
+background-color: rgba(220,20,60, 0.6);
+}
+
+.legend {
+  padding: 6px 8px;
+  font: 14px Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 1px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.legend ul {
+  padding: 0;
+  margin: 0;
+  clear: both;
+  list-style-type: none;
+}
+
+.legend li {
+  display: inline-block;
+  width: 60px;
+  height: 18px;
+}
+
+.legend .min {
+  float: left;
+  padding-bottom: 5px;
+}
+
+.legend .max {
+  float: right;
+}
+
+.iframeContainer {
+  padding: 20px;
+  border: 1px solid #e3e3e3;
+}
+
+/* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Padding bottom by footer height */
+  padding-bottom: 80px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%; /* Set the fixed height of the footer here */
+  height: 10px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+#footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+h4 {
+  text-align: center;
+  color: black;
+}
+
+.aText {
+  font-family: sans-serif;
+  font-size: 16px;
+  text-anchor: middle;
+}
+
+.active {
+  font-weight: bold;
+  fill: #000;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive {
+  font-weight: lighter;
+  fill: #c9c9c9;
+  transition: fill 0.3s ease-out;
+  text-anchor: middle;
+}
+
+.inactive:hover {
+  fill: #000;
+  cursor: pointer;
+}
+
+/* font size dependent on radius, see app.js */
+.stateText {
+  font-family: sans-serif;
+  fill: #fff;
+  text-anchor: middle;
+}
+
+.stateCircle {
+  fill: #89bdd3;
+  stroke: #e3e3e3;
+}
+
+.chart {
+  display: block;
+  margin: 0;
+}
+
+.d3-tip {
+  padding: 6px;
+  font-size: 12px;
+  line-height: 1;
+  line-height: 1.5em;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+}
+
+/* Mobile Rules */
+@media screen and (max-width: 530px) {
+  .stateText {
+    display: none;
+  }
+
+  .aText {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .aText {
+    font-size: 13px;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  width: 200px;
+  height: 60px;
+  padding: 2px;
+  padding-top: 8px;
+  font: 12px sans-serif;
+  color: white;
+  text-align: center;
+  background: #551aaf;
+  border: 0;
+  border-radius: 10px;
+}
+
+
+.axisText {
+  font-family: sans-serif;
+  font-weight: bold;
+  fill: #551aaf;
+  text-anchor: middle;
+}
+

@@ -16,8 +16,8 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 */
 
 // Assemble API query URL
-var sold_listings_link = "/assets/data/sold_listings_coord.json";
-var current_listings_link = "/assets/data/current_listings_coord.json";
+var sold_listings_link = "/static/data/sold_listings_coord.json";
+var current_listings_link = "/static/data/current_listings_coord.json";
 
 // Grab the data with d3
 d3.json(sold_listings_link).then(function(sold_listings_coord) {
@@ -36,18 +36,22 @@ d3.json(sold_listings_link).then(function(sold_listings_coord) {
 		 
 		 var childCount = cluster.getChildCount();
 		 var c = ' marker-cluster-';
+		 var sold_type = '';
 		 if (childCount < 10) {
 		   c += 'small';
+		   sold_type = 'soldsmall';
 		 } 
-		 else if (childCount < 100) {
+		 else if (childCount < 20) {
 		   c += 'medium';
+		   sold_type = 'soldmedium';
 		 } 
 		 else {
 		   c += 'large';
+		   sold_type = 'soldlarge';
 		 }
 
 		 return new L.DivIcon({ html: '<div><span>' + childCount + '</span></div>', 
-		  className: 'sold marker-cluster' + c,iconSize: new L.Point(40, 40) });
+		  className: sold_type +' marker-cluster' + c,iconSize: new L.Point(40, 40) });
 		 }
 		});
 		
@@ -57,18 +61,22 @@ d3.json(sold_listings_link).then(function(sold_listings_coord) {
 		 
 		 var childCount = cluster.getChildCount();
 		 var c = ' marker-cluster-';
+		 var current_type = '';
 		 if (childCount < 10) {
 		   c += 'small';
+		   current_type = 'currentsmall';
 		 } 
-		 else if (childCount < 100) {
+		 else if (childCount < 20) {
 		   c += 'medium';
+		   current_type = 'currentmedium';
 		 } 
 		 else {
 		   c += 'large';
+		   current_type = 'currentlarge';
 		 }
 
 		 return new L.DivIcon({ html: '<div><span>' + childCount + '</span></div>', 
-		  className: 'current marker-cluster' + c, iconSize: new L.Point(40, 40) });
+		  className: current_type+' marker-cluster' + c, iconSize: new L.Point(40, 40) });
 		 }
 		});
 		
@@ -85,9 +93,12 @@ d3.json(sold_listings_link).then(function(sold_listings_coord) {
 			  stroke: true,
 			  fillOpacity: 0.75,
 			  color: "black",
-			  fillColor: '#008000',
+			  fillColor: '#FFA07A',
 			  radius: 60
-			}).bindPopup("<h3>" + "Price: $"+sold_listings_coord[i].price + "</h3>")
+			}).bindPopup(
+						"<h4>" + "Address: "+sold_listings_coord[i].Address + "</h4> <hr>" + 
+						"<h4>" + "Price: $"+sold_listings_coord[i].price + "</h4> <hr>" 
+						+ "<h4>" + "Beds: "+sold_listings_coord[i].NumberOfBeds + "</h4>" )
 			);
 			}
 		}
@@ -107,7 +118,8 @@ d3.json(sold_listings_link).then(function(sold_listings_coord) {
 			  color: "black",
 			  fillColor: '#FF7F50',
 			  radius: 60
-			}).bindPopup("<h3>" + "Price: $"+current_listings_coord[i].price + "</h3>")
+			}).bindPopup("<h4>" + "Address: "+current_listings_coord[i].Address + "</h4> <hr>" + "<h4>" + "Price: $"+current_listings_coord[i].price + "</h4> <hr>" 
+						+ "<h4>" + "Beds: "+current_listings_coord[i].NumberOfBeds + "</h4>" )
 			
 			);
 			
@@ -186,8 +198,8 @@ function createMap(sold_markers, current_markers) {
 
   // Create our map, giving it the satellite, earthquakes and tectonic layers to display on load
   var myMap = L.map("map", {
-    center: [33.155373, -96.818733],
-    zoom: 14,
+    center: [32.897480, -97.040443],
+    zoom: 11,
     layers: [streets, sold_markers, current_markers]
   });
   

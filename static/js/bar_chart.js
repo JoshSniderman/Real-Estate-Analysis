@@ -191,7 +191,7 @@ d3.json("./static/data/current_listing.json").then((current_listed_data) => {
 			console.log(avg_prices)
 			
 			//building logic for metadata html
-			d3.select("#num").html("<p><strong> &nbsp &nbsp # of Properties: "+rows.length+"</strong></p>");
+			d3.select("#num").html("<p><strong> &nbsp &nbsp Currently available: "+rows.length+"</strong></p>");
 			d3.select("#area").html("<p><strong> &nbsp &nbsp Avg. SqFt. of Properties: "+Math.round(sq_ft/rows.length)+"</strong></p>");
 			
 			//*****************processing sold listing data*****************
@@ -235,7 +235,7 @@ d3.json("./static/data/current_listing.json").then((current_listed_data) => {
 			console.log(avg_prices2)
 			
 			//building logic for metadata html
-			d3.select("#num2").html("<p><strong> &nbsp &nbsp # of Properties: "+rows2.length+"</strong></p>");
+			d3.select("#num2").html("<p><strong> &nbsp &nbsp Sold in last 6 months: "+rows2.length+"</strong></p>");
 			d3.select("#area2").html("<p><strong> &nbsp &nbsp Avg. SqFt. of Properties: "+Math.round(sq_ft2/rows2.length)+"</strong></p>");
 			
 

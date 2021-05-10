@@ -130,7 +130,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
 
   var toolTip = d3.tip()
 	  .attr("class", "tooltip")
-	  .offset([80, -60])
+	  .offset([95, -105])
 	  .html(function(d) {
 		return (`Zipcode: ${d.ZipCode}<br>${xlabel}: ${d[chosenXAxis]}<br>${ylabel}: ${d[chosenYAxis]}`);
 	  });

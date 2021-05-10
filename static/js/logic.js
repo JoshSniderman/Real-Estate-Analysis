@@ -16,8 +16,8 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 */
 
 // Assemble API query URL
-var sold_listings_link = "/static/data/sold_listings_coord.json";
-var current_listings_link = "/static/data/current_listings_coord.json";
+var sold_listings_link = "./static/data/sold_listings_coord.json";
+var current_listings_link = "./static/data/current_listings_coord.json";
 
 // Grab the data with d3
 d3.json(sold_listings_link).then(function(sold_listings_coord) {

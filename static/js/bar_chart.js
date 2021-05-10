@@ -2,9 +2,9 @@
 // The data from the JSON file is arbitrarily named importedData as the argument
 
 
-d3.json("/static/data/current_listing.json").then((current_listed_data) => {
+d3.json("./static/data/current_listing.json").then((current_listed_data) => {
 	
-	d3.json("/static/data/sold_listing.json").then((sold_listed_data) => {
+	d3.json("./static/data/sold_listing.json").then((sold_listed_data) => {
   
 		console.log(current_listed_data);
 

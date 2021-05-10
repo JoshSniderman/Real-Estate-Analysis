@@ -162,7 +162,7 @@ function getData() {
 }
 
 // Retrieve data from the CSV file and execute everything below
-d3.csv("/static/data/current_listing.csv").then(function(DemoghrapicData, err) {
+d3.csv("./static/data/current_listing.csv").then(function(DemoghrapicData, err) {
 	DemoghrapicData_Actual = DemoghrapicData;
 	
   if (err) throw err;

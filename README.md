@@ -1,8 +1,8 @@
-# Real Estate Analysis Sold vs. Current
+# Real Estate Analysis Sold vs. Current Price Action
 
-## Objetive
-Most of the real estate websites provides an option of analyzing current and sold properties seperately. In purchasing or listing a house, price action remains to be the key important attribute in the pricing for buying, selling and listing decisions.
-We aim to provide a visual solution to both the buyers and sellers to give the functionality for the user to review & analyze both current and sold properties together which could help for a much better listing or buying decision.
+## Objective
+Most of the real estate websites provides an option of analyzing current and sold properties separately but not visiually together. Also, most real estate websites already have functions that lets you do a research on individual attributes and location information. In purchasing or listing a house, price action remains to be the key important attribute in the pricing for buying, selling and listing decisions.
+The aim is to provide a visual solution to both the buyers and sellers to give the functionality for the user to review & analyze both current and sold properties together which could help for a much better listing or buying decision.
 
 ## ETL (Data Extraction Transform and Load)
  For this project the data has been scrapped from Redfin real estate website. 
@@ -38,23 +38,23 @@ The objective of this visualization is to provide the user the flexibity to revi
 The following are features available in the map chart:
 - Sold properties are shown in "green" color with different gradients based on the number of properties being sold. The more the properties sold, the darker the color is.
 - Current available properties are shown in "red" color, with same different gradients based on number of properties being available.
-- In order to give a customized color gradient based on count of properties sold/current listing, function "L.DivIcon" from "L.markerClusterGroup" is being updated with different class names to keep each segment separate.
+- In order to give a customized color gradient based on number of properties sold/current listing, function "L.DivIcon" from "L.markerClusterGroup" is updated in JavaScript to have different class names in HTML and those class names are further used in CSS to define the color coding for each cluster group.
  
 #### Insights
-- At a higher level, we can observe that Frisco and Irving are the hotspot areas as there are more than 100 properties being currently avaialble and more than 100 properties being sold in the past 6 months.
-- On the other hand, we can notice that in the past 6 months only ~20 properties being sold in Fort Worth area and around same number of properties are currently available as well.
+- At a higher level, we can observe that Frisco and Irving are hotspot areas as there are more than 100 properties being currently avaialble and more than 100 properties being sold in the past 6 months.
+- On the other hand, we can see that in the past 6 months only ~20 properties being sold in Fort Worth area and around same number of properties are currently available as well.
 
 ![map_chart](Images/map_chart.png)
 
 ### 2. Bar Chart
-In order to further deep-dive ito the real estate analysis, as a next step I have built a compartive bar chart to show the avg. prices of the properties being sold & avaialble across the number of beds. Following are the features available in the bar chart:
+In order to further deep-dive ito the real estate analysis, as a next step, compartive bar charts are built to show the avg. prices of the properties being sold & avaialble across the number of beds. Following are the features available in the bar chart:
 - User can interact with the bar chart using the dropdown filter which contains the City & ZipCode values
-- On hovering on bar charts use can review the avg. prices corresponding to number of beds
+- On hovering on bar charts user can review the avg. prices corresponding to number of beds
 
 #### Insights
 - Following up on the above map chart insights, now we can further deep-dive into each of the cities (like Irving, Frisco and Fort Worth) to understand why Frisco & Irving are hotspot areas and why not Fort Worth.
 - Also, using this visualization we can compare the avg. prices of properties across number of beds and analyze how much is the difference in the avg. prices of properties based on beds.
-- For example, in "Frisco-75022" the avg. price of currently available properties for 3 beds is lower compared to avg. price of 2 beds.
+- For example, in "Frisco-75034" the avg. price of currently available properties for 3 beds is almostsame as vg. price of 2 beds.
 
 ![bar_chart](Images/bar_chart.png)
 
